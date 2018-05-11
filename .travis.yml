@@ -11,3 +11,5 @@ cache:
     - "node_modules"
 script:
   - yarn lint
+deploy:
+    npm run deploy-storybook -- --ci --host-token-env-variable=GITHUB_TOKEN
