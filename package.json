@@ -50,7 +50,8 @@
     "test": "node scripts/test.js --env=jsdom",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
-    "deploy-storybook": "storybook-to-ghpages"
+    "deploy-storybook": "storybook-to-ghpages",
+    "deploy-storybook-ci": "storybook-to-ghpages --ci --host-token-env-variable=GITHUB_TOKEN"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.4.3",

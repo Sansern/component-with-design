@@ -11,7 +11,7 @@ cache:
     - "node_modules"
 deploy:
   provider: script
-  script: npm run deploy-storybook -- --ci --host-token-env-variable=GITHUB_TOKEN
+  script: npm run deploy-storybook-ci
   skip_cleanup: true
   on:
     branch: master
