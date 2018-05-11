@@ -12,4 +12,7 @@ cache:
 script:
   - yarn lint
 deploy:
-    npm run deploy-storybook -- --ci --host-token-env-variable=GITHUB_TOKEN
+  provider: script
+  script: npm run deploy-storybook -- --ci --host-token-env-variable=GITHUB_TOKEN
+  on:
+    branch: master
