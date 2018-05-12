@@ -11,6 +11,6 @@ deploy:
   provider: pages
   skip_cleanup: true
   local_dir: storybook-static/
-  github_token: $GITH
+  github_token: $GH_TOKEN
   on:
     branch: master
