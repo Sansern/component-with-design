@@ -5,9 +5,12 @@ cache:
   yarn: true
   directories:
     - "node_modules"
+before_deploy:
+  - npm run build-storybook
 deploy:
-  provider: script
-  script: npm run deploy-storybook-ci
+  provider: pages
   skip_cleanup: true
+  local_dir: storybook-static/
+  github_token: $GITH
   on:
     branch: master
