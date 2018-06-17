@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import ColorSection from './components/ColorSection';
 import ColorCollection from './components/ColorCollection';
+import ColorSection from './components/ColorSection';
 import Color from './components/Color';
 
 const Wrapper = styled.div`
@@ -15,8 +15,8 @@ const Wrapper = styled.div`
 function ColorPage() {
   return (
     <Wrapper>
-      <ColorSection type="Brand Color" description="The color theme that reflects the brand or style.">
-        <ColorCollection name="Primary">
+      <ColorCollection type="Brand Color" description="The color theme that reflects the brand or style.">
+        <ColorSection name="Primary">
           <Color
             colorName="primary"
             rgbColor={{
@@ -25,8 +25,8 @@ function ColorPage() {
               blue: 46
             }}
           />
-        </ColorCollection>
-        <ColorCollection name="Secondary">
+        </ColorSection>
+        <ColorSection name="Secondary">
           <Color
             colorName="secondary"
             rgbColor={{
@@ -35,10 +35,10 @@ function ColorPage() {
               blue: 46
             }}
           />
-        </ColorCollection>
-      </ColorSection>
-      <ColorSection type="UI Color System" description="The color theme that prefer the standard UI.">
-        <ColorCollection name="Neural">
+        </ColorSection>
+      </ColorCollection>
+      <ColorCollection type="UI Color System" description="The color theme that prefer the standard UI.">
+        <ColorSection name="Neural">
           <Color
             colorName="white"
             rgbColor={{
@@ -87,8 +87,8 @@ function ColorPage() {
               blue: 242
             }}
           />
-        </ColorCollection>
-        <ColorCollection name="Logic">
+        </ColorSection>
+        <ColorSection name="Logic">
           <Color
             colorName="error"
             rgbColor={{
@@ -121,8 +121,8 @@ function ColorPage() {
               blue: 0
             }}
           />
-        </ColorCollection>
-      </ColorSection>
+        </ColorSection>
+      </ColorCollection>
     </Wrapper>
   );
 }

@@ -1,38 +1,31 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import Typography from '../../../../shared/components/Typography';
 
-const Section = styled.div``;
-
-const HeadLine = props => <Typography variant="headlineFive" {...props} />
-
-const SubHeadLine = props => <Typography variant="headlineSix" {...props} />
+const Wrapper = styled.div``;
 
 const ColorContainer = styled.div`
-  width: 1024px;
-  padding-top: ${({theme}) => theme.spacing[3]};
   display: flex;
-  justify-content: flex-start;
+  padding-top: ${({theme}) => theme.spacing[2]};
+  padding-bottom: ${({theme}) => theme.spacing[4]};
   flex-wrap: wrap;
 `;
 
 const ColorSectionPropTypes = {
-  colorType: PropTypes.string,
-  description: PropTypes.string
+  name: PropTypes.string
 };
 
-const ColorSection = ({ children, type, description }) => {
+function ColorSection({ name, children  }) {
   return (
-    <Section>
-      <HeadLine>{type}</HeadLine>
-      <SubHeadLine>{description}</SubHeadLine>
+    <Wrapper>
+      <Typography variant="caption" children={`${name} Color`} />
       <ColorContainer>
         {children}
       </ColorContainer>
-    </Section>
-  );
-};
+    </Wrapper>
+  )
+}
 
 ColorSection.propTypes = ColorSectionPropTypes;
 

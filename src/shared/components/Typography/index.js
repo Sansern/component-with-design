@@ -7,20 +7,24 @@ import { withProps } from 'recompose';
 const TypographyPropTypes = {
   variant: PropTypes.string,
   tag: PropTypes.string,
-  align: PropTypes.string
+  align: PropTypes.string,
+  color: PropTypes.string,
+  noWrap: PropTypes.bool
 };
 
 const TypographyDefaultProps = {
   variant: 'headline',
   tag: 'p',
-  align: 'left'
+  align: 'left',
+  color: 'gray',
+  noWrap: false
 };
 
 TypographyTag.propTypes = TypographyPropTypes;
 
 TypographyTag.defaultProps = TypographyDefaultProps;
 
-function TypographyTag({ tag, variant, align, classOwnerName, className, ...throughProps }) {
+export function TypographyTag({ tag, variant, align, classOwnerName, className, ...throughProps }) {
   const mergeClassName = classNames(classOwnerName, className);
   return React.createElement(tag, {
     ...throughProps,
@@ -28,17 +32,21 @@ function TypographyTag({ tag, variant, align, classOwnerName, className, ...thro
   });
 }
 
+TypographyTag.displayName = 'Typography';
+
 const getTypoStyleFromProps = styleName => props =>
   props.theme.typography[props.variant][styleName];
 
 const Typography = styled(TypographyTag)`
+  margin: 0;
   font-size: ${getTypoStyleFromProps('fontSize')};
   font-family: ${getTypoStyleFromProps('fontFamily')};
   font-weight: ${getTypoStyleFromProps('fontWeight')};
   line-height: ${getTypoStyleFromProps('lineHeight')};
   letter-spacing: ${getTypoStyleFromProps('letterSpacing')};
   text-align: ${props => props.align};
-  margin: 0;
+  color: ${props => props.theme.color[props.color]};
+  ${props => props.noWrap ? 'overflow: hidden; text-overflow: ellipsis; white-space: nowrap;' : ''}
 `;
 
 Typography.propTypes = TypographyPropTypes;
