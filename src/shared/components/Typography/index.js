@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import classNames from 'classnames';
+import { withProps } from 'recompose';
 
 const TypographyPropTypes = {
   variant: PropTypes.string,
@@ -18,8 +20,12 @@ TypographyTag.propTypes = TypographyPropTypes;
 
 TypographyTag.defaultProps = TypographyDefaultProps;
 
-function TypographyTag({ tag, variant, align, ...throughProps }) {
-  return React.createElement(tag, throughProps);
+function TypographyTag({ tag, variant, align, classOwnerName, className, ...throughProps }) {
+  const mergeClassName = classNames(classOwnerName, className);
+  return React.createElement(tag, {
+    ...throughProps,
+    className: mergeClassName
+  });
 }
 
 const getTypoStyleFromProps = styleName => props =>
@@ -39,4 +45,8 @@ Typography.propTypes = TypographyPropTypes;
 
 Typography.defaultProps = TypographyDefaultProps;
 
-export default Typography;
+export default withProps(props => {
+  return {
+    classOwnerName: props.className
+  }
+})(Typography);
