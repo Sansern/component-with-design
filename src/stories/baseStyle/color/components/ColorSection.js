@@ -3,9 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Typography from '../../../../shared/components/Typography';
 
-const Section = styled.div`
-  padding-bottom: 60px;
-`;
+const Section = styled.div``;
 
 const HeadLine = props => <Typography variant="headlineFive" {...props} />
 

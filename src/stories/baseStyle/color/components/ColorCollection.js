@@ -3,13 +3,12 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Typography from '../../../../shared/components/Typography';
 
-const Wrapper = styled.div`
-  padding-bottom: ${({theme}) => theme.spacing[2]}
-`;
+const Wrapper = styled.div``;
 
 const ColorContainer = styled.div`
   display: flex;
   padding-top: ${({theme}) => theme.spacing[2]};
+  padding-bottom: ${({theme}) => theme.spacing[4]};
   flex-wrap: wrap;
 `;
 
