@@ -4,7 +4,9 @@ import Typography from '../../shared/components/Typography';
 function App() {
   return (
     <div>
-      <Typography> Test Typography </Typography>
+      <Typography variant="caption" tag="h3">
+        Test Typography
+      </Typography>
     </div>
   );
 }
