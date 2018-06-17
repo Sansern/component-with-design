@@ -1,7 +1,8 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { storiesOf, addDecorator  } from '@storybook/react';
-import TypographyPage from './components/TypographyPage';
+import TypographyPage from './typography';
+import ColorPage from './color';
 
 import theme from '../../shared/styles/theme';
 
@@ -13,9 +14,12 @@ const ThemeProviderWrapper = storyFn => (
 
 addDecorator(ThemeProviderWrapper);
 
-storiesOf('Base Style', module).add('Typography', () => {
-  return <TypographyPage />;
-});
-
+storiesOf('Base Style', module)
+  .add('Typography', () => {
+    return <TypographyPage />;
+  })
+  .add('Color', () => {
+    return <ColorPage />;
+  })
 
 

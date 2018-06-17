@@ -32,6 +32,7 @@ const Typography = styled(TypographyTag)`
   line-height: ${getTypoStyleFromProps('lineHeight')};
   letter-spacing: ${getTypoStyleFromProps('letterSpacing')};
   text-align: ${props => props.align};
+  margin: 0;
 `;
 
 Typography.propTypes = TypographyPropTypes;
