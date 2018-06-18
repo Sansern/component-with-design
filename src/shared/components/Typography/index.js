@@ -24,7 +24,7 @@ TypographyTag.propTypes = TypographyPropTypes;
 
 TypographyTag.defaultProps = TypographyDefaultProps;
 
-export function TypographyTag({ tag, variant, align, classOwnerName, className, ...throughProps }) {
+export function TypographyTag({ tag, variant, align, classOwnerName, className, noWrap, ...throughProps }) {
   const mergeClassName = classNames(classOwnerName, className);
   return React.createElement(tag, {
     ...throughProps,
